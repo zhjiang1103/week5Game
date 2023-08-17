@@ -9,7 +9,6 @@ function CoinFlip() {
   return (
     <div>
         <button onClick={() => {flipCoin()}}>Flip Coin</button>
-        <input/>
         <p>The coin landed on: {coinSide}</p>
     </div>
   )
