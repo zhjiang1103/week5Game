@@ -1,11 +1,18 @@
 import { useState } from 'react'
-import CoinFlip from './CoinFlip';
 
 function Userguess() {
     const [userGuess, setUserGuess] = useState('');
-    
-  return (
-    
+    const [result, setResult] = useState(null);
+
+    const resultMessage = () => {
+        if (userGuess.toLowerCase() === coinSide.toLowerCase()) {
+          setResult('Congratulations! You guessed correctly!');
+        } else {
+          setResult('Sorry, your guess was incorrect.');
+        }
+    }
+    return (
+<>
     <label>
       Your Guess:
       <input
@@ -14,7 +21,9 @@ function Userguess() {
         onChange={(e) => setUserGuess(e.target.value)}
       />
     </label>
-
+    <button onClick={resultMessage}>Check Guess</button>
+    <p>Result:{result}</p>
+</>
   )
 }
 
