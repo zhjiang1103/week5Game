@@ -20,11 +20,10 @@ function App() {
       
         <h1>Let's start the coin flip game!</h1> 
         <button onClick={() => {flipCoin()}}>Flip Coin</button>
-        <p>The coin landed on: {coinSide}</p>
         <p>Count: {count}</p>
         {count === 10 && <p>Count reached 10! It's resetting to 0.</p>}
-
         <Userguess coinSide={coinSide} />
+        <p>The coin landed on: {coinSide}</p>
  
 
 
