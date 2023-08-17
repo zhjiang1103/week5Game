@@ -1,11 +1,11 @@
 import { useState } from 'react'
 
-function Userguess() {
+function Userguess(props) {
     const [userGuess, setUserGuess] = useState('');
     const [result, setResult] = useState(null);
 
     const resultMessage = () => {
-        if (userGuess.toLowerCase() === coinSide.toLowerCase()) {
+        if (userGuess.toLowerCase() === props.coinSide.toLowerCase()) {
           setResult('Congratulations! You guessed correctly!');
         } else {
           setResult('Sorry, your guess was incorrect.');

@@ -1,16 +1,30 @@
 import './App.css'
-import CoinFlip from './components/CoinFlip'
 import Userguess from './components/Userguess'
+import {useState} from 'react'
+
 
 
 function App() {
-return (
+  const [coinSide, setcoinSide] = useState(null);
+  const [count, setCount] = useState(0);
+  const flipCoin = () => {
+    const randomSide = Math.random() < 0.5 ? 'Heads' : 'Tails';
+    setcoinSide(randomSide);
+    if(count<10){setCount(count+1);}
+    else{setCount(0)}
+  };
+  
+  return (
  
 <>
       
         <h1>Let's start the coin flip game!</h1> 
-        <CoinFlip />
-        <Userguess  />
+        <button onClick={() => {flipCoin()}}>Flip Coin</button>
+        <p>The coin landed on: {coinSide}</p>
+        <p>Count: {count}</p>
+        {count === 10 && <p>Count reached 10! It's resetting to 0.</p>}
+
+        <Userguess coinSide={coinSide} />
  
 
 
