@@ -8,19 +8,24 @@ function Userguess(props) {
 
 
     const resultMessage = () => {
-      if (userGuess !="" && hasEnteredGuess===false){
+      if (userGuess !=""){
         if (userGuess.toLowerCase() === props.coinSide.toLowerCase()) {
           setResult('Congratulations! You guessed correctly!');
         } else {
           setResult('Sorry, your guess was incorrect.');
         }
         setHasEnteredGuess(true); // Mark that a guess has been entered
-        setUserGuess(''); // Clear the input field
+        //setUserGuess(''); // Clear the input field
         
     }
     else {setHasEnteredGuess(false)}
   }
-
+  const reset = () =>{
+    if (userGuess !="" && hasEnteredGuess!==false){
+      setUserGuess('');
+      setHasEnteredGuess(false);
+  }
+  }
   
     const [url,setUrl] = useState("")
     useEffect(() => {
@@ -42,6 +47,7 @@ function Userguess(props) {
       />
     </label>
     <button onClick={resultMessage}>Check Guess</button>
+    <button onClick={reset}>Reset</button>
 
     {hasEnteredGuess && <p>Result: {result}</p>}
     
@@ -54,5 +60,6 @@ function Userguess(props) {
 </>
   )
 }
+
 
 export default Userguess
