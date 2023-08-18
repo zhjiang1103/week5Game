@@ -23,8 +23,8 @@ function App() {
         <p>Count: {count}</p>
         {count === 10 && <p>Count reached 10! It's resetting to 0.</p>}
         <Userguess coinSide={coinSide} />
-        <p>The coin landed on: {coinSide}</p>
- 
+        
+        
 
 
 </>
