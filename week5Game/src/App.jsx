@@ -8,7 +8,7 @@ function App() {
   const [coinSide, setcoinSide] = useState(null);
   const [count, setCount] = useState(0);
   const flipCoin = () => {
-    const randomSide = Math.random() < 0.5 ? 'Heads' : 'Tails';
+    const randomSide = Math.random() < 0.5 ? 'Head' : 'Tail';
     setcoinSide(randomSide);
     if(count<10){setCount(count+1);}
     else{setCount(0)}
