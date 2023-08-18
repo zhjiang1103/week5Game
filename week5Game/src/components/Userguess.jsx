@@ -53,7 +53,7 @@ function Userguess(props) {
     
     
     {hasEnteredGuess && <p>The coin landed on: {props.coinSide}</p>}
-     {hasEnteredGuess &&<img src={url} alt={props.coinSide} />}
+     {hasEnteredGuess &&<img src={url} alt={props.coinSide} style={{ width: '400px', height: 'auto' }}/>}
 
   
     
